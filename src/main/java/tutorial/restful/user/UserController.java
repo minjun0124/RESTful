@@ -1,6 +1,7 @@
 package tutorial.restful.user;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -15,7 +16,7 @@ public class UserController {
 
     private final UserDaoService service;
 
-    @GetMapping("/users")
+    @GetMapping(value = "/users")
     public List<User> retrieveAllUsers() {
         return service.findAll();
     }
